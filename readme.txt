@@ -5,7 +5,7 @@ Plugin Uri: http://wishpot.com/wordpress-plugins/wishpot-publisher-pro
 Tags: import, xml data, wishpot, ad manager, ads
 Requires at least: 2.7
 Tested up to: WP 3.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
 
 
@@ -53,9 +53,12 @@ answer !
 
 == Changelog ==
 
-= 1.1.0 =
+= 1.0.0 =
 - Wishpot Ad Manager Plugin changed first version 
 
+= 1.0.1 =
+- screenshot-1.png changed
+- fix for firefox 4 added
 
 `<?php code(); // goes in backticks ?>`
 

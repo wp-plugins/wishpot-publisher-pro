@@ -105,6 +105,7 @@ padding: 0px;
 
 .opera #wishpot_pub_pro_widget_wrapper .widget300x250 ul.product,
 .ff3 #wishpot_pub_pro_widget_wrapper .widget300x250 ul.product,
+.ff4 #wishpot_pub_pro_widget_wrapper .widget300x250 ul.product,
 .safari #wishpot_pub_pro_widget_wrapper .widget300x250 ul.product,
 .chrome #wishpot_pub_pro_widget_wrapper .widget300x250 ul.product
 {
@@ -126,6 +127,7 @@ padding: 0px;
 
 .opera #wishpot_pub_pro_widget_wrapper .widget300x600 ul.product,
 .ff3 #wishpot_pub_pro_widget_wrapper .widget300x600 ul.product,
+.ff4 #wishpot_pub_pro_widget_wrapper .widget300x600 ul.product,
 .safari #wishpot_pub_pro_widget_wrapper .widget300x600 ul.product,
 .chrome #wishpot_pub_pro_widget_wrapper .widget300x600 ul.product
 {
@@ -466,6 +468,8 @@ border-radius: 3px;
 .safari #wishpot_pub_pro_widget_wrapper .widget300x600 .widget_btn_search,
 .ff3 #wishpot_pub_pro_widget_wrapper .widget300x250 .widget_btn_search,
 .ff3 #wishpot_pub_pro_widget_wrapper .widget300x600 .widget_btn_search,
+.ff4 #wishpot_pub_pro_widget_wrapper .widget300x250 .widget_btn_search,
+.ff4 #wishpot_pub_pro_widget_wrapper .widget300x600 .widget_btn_search,
 .chrome #wishpot_pub_pro_widget_wrapper .widget300x250 .widget_btn_search,
 .chrome #wishpot_pub_pro_widget_wrapper .widget300x600 .widget_btn_search
 {
