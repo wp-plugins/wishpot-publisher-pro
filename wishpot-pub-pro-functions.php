@@ -191,7 +191,7 @@ function  wishpot_pub_pro_ajax_func_get_results()
       '        <input name="ImgSrc" value="' . $wishpot_product_details[0]['image_source'] . '" type="hidden" />' . "\n" .
       '        <input name="Sku" value="' . $wishpot_item_num . '" type="hidden" />' . "\n" .
       '      </div>' . "\n" .
-      '      <a href="' . product_url . '" title="" target="_blank">' . "\n" .
+      '      <a href="' . $wishpot_product_details[0]['url'] . '" title="" target="_blank">' . "\n" .
       '        <img width="120" height="22" alt="" src="http://s3.amazonaws.com/wp4domains/buttons/product-buynow.png" complete="complete" rel="nofollow"/>' . "\n" .
       '      </a>' . "\n" .
       '      <a title="Add to your universal wish list or wedding registry" onclick="' . $action . '" href="http://www.wishpot.com/" target="_blank" rel="nofollow">' . "\n" .
@@ -223,7 +223,7 @@ function  wishpot_pub_pro_ajax_func_get_results()
         '            <input name="ImgSrc" value="' . $wishpot_product_details[0]['image_source'] . '" type="hidden" />' . "\n" .
         '            <input name="Sku" value="' . $wishpot_item_num . '" type="hidden" />' . "\n" .
         '          </div>' . "\n" .
-        '          <a href="' . product_url . '" title="" target="_blank">' . "\n" .
+        '          <a href="' . $offer['url'] . '" title="" target="_blank">' . "\n" .
         '            <img width="120" height="22" alt="" src="http://s3.amazonaws.com/wp4domains/buttons/product-buynow.png" complete="complete" rel="nofollow"/>' . "\n" .
         '          </a>' . "\n" .
         '          <a title="Add to your universal wish list or wedding registry" onclick="' . $action . '" href="http://www.wishpot.com/" target="_blank" rel="nofollow">' . "\n" .

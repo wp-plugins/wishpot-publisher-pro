@@ -137,7 +137,7 @@ class wishpot_pub_pro_Widget extends WP_Widget
     $defaults = array(
                        'wishpot_pub_pro_widget_ad_template'           => 0,
                        'wishpot_pub_pro_widget_ad_title'              => '',
-                       'wishpot_pub_pro_widget_ad_hide_title'         => 'off',
+                       'wishpot_pub_pro_widget_ad_hide_title'         => 'on',
                        'wishpot_pub_pro_widget_ad_theme'              => 0,
                        'wishpot_pub_pro_widget_ad_fblike'             => 'on',
                        'wishpot_pub_pro_widget_ad_fbshare'            => 'on',
@@ -195,9 +195,7 @@ class wishpot_pub_pro_Widget extends WP_Widget
     '
              </select>
            </td>
-         </tr>' . "\n";
-
-/*
+         </tr>
          <tr>
            <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_title') . '">' . __('Title', 'wishpot_pub_pro') . '</label></th>
            <td class="wishpot_widget_option_middle_part"><input type="text" size="20" id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_title') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_title') . '" value="' . esc_attr($instance['wishpot_pub_pro_widget_ad_title']) . '" /></td>
@@ -207,7 +205,10 @@ class wishpot_pub_pro_Widget extends WP_Widget
            <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_hide_title') . '">' . __('Hide Title', 'wishpot_pub_pro') . '</label></th>
            <td><input class="checkbox wishpot_widget_option_middle_part" type="checkbox" ' . checked( $instance['wishpot_pub_pro_widget_ad_hide_title'], 'on', false ) . ' id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_hide_title') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_hide_title') . '" /></td>
            <td class="wishpot_widget_option_right_part">' . __('Hide the title in the Ad box.', 'wishpot_pub_pro') . '</td>
-         </tr>
+         </tr>' . "\n";
+
+/*
+
          <tr>
            <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_theme') . '">' . __('Theme', 'wishpot_pub_pro') . '</label></th>
            <td class="wishpot_widget_option_middle_part">
@@ -417,9 +418,22 @@ function  wishpot_pub_pro_generate_widget($instance)
       break;
   }
 
+
   $html .=
-  '<h2>Powered by Epik</h2>' . "\n" .
-  '<div class="wishpot_pub_pro_widget_search">' . "\n" .
+  '<div class="wishpot_pub_pro_widget_search">' . "\n";
+
+  if ( ($instance['wishpot_pub_pro_widget_ad_hide_title'] == 'on') OR (empty($instance['wishpot_pub_pro_widget_ad_title'])) )
+  {
+    $html .=
+    '<h2>Powered by Wishpot</h2>' . "\n";
+  }
+  else
+  {
+    $html .=
+    '<h2>' . $instance['wishpot_pub_pro_widget_ad_title'] . '</h2>' . "\n";
+  }
+
+  $html .=
   '  <form method="post" action="">' . "\n" .
   '    <input type="text" name="wishpot_widget_search" id="s_4" />' . "\n" .
   '    <a href="javascript:void();" onclick="wishpot_pub_pro_widget_show_search_results(this.parentNode); return false;" class="widget_btn_search"></a>' . "\n" .

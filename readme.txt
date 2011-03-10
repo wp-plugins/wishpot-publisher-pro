@@ -5,7 +5,7 @@ Plugin Uri: http://wishpot.com/wordpress-plugins/wishpot-publisher-pro
 Tags: import, xml data, wishpot, ad manager, ads
 Requires at least: 2.7
 Tested up to: WP 3.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 
 
@@ -59,6 +59,9 @@ answer !
 = 1.0.1 =
 - screenshot-1.png changed
 - fix for firefox 4 added
+
+= 1.0.2 =
+- error on product detail page fixed - the buy it now buttons was not working
 
 `<?php code(); // goes in backticks ?>`
 

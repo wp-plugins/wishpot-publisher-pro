@@ -16,6 +16,7 @@ header('Content-type: text/css');
 {
   width:300px; 
   margin:0 auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #wishpot_pub_pro_widget_wrapper .wishpot_pub_pro_widget_search
@@ -37,7 +38,16 @@ header('Content-type: text/css');
 #wishpot_pub_pro_widget_wrapper .widget300x250{width:298px;height:248px;}
 #wishpot_pub_pro_widget_wrapper .widget300x600{width:298px;height:600px;}
 
-#wishpot_pub_pro_widget_wrapper .epik_widget h2{margin-left:3px;margin-bottom:3px;color:#fff;font-weight:normal;font-size:11px;margin-top:2px;}
+#wishpot_pub_pro_widget_wrapper .epik_widget h2
+{
+  margin-left:2px;
+  margin-bottom:3px;
+  color:#fff;
+  font-weight:normal;
+  font-size:11px;
+  margin-top:2px;
+  width: auto;
+}
 
 #wishpot_pub_pro_widget_wrapper .widget300x250 form,
 #wishpot_pub_pro_widget_wrapper .widget300x600 form
@@ -49,7 +59,7 @@ margin-top : -5px\9; /* IE8 and below */
 #wishpot_pub_pro_widget_wrapper .widget300x250 input[type="text"],
 #wishpot_pub_pro_widget_wrapper .widget300x600 input[type="text"]
 {
-margin-left:3px;
+  margin: 3px 0px 0px 3px;
 line-height:11px;
   padding:0px;
 font-size:11px;
@@ -90,16 +100,16 @@ border:1px solid #64a4fa;
 
 #wishpot_pub_pro_widget_wrapper .epik_widget ul.product
 {	
-margin-top:0px;
-overflow:scroll !important;
-	overflow-x:hidden !important;
-	overflow-y:auto;
-list-style:none;
-float:left;
-position:relative;
-display:inline;
-max-width: 99%;
-padding: 0px;
+  margin-top:5px;
+  overflow:scroll !important;
+  overflow-x:hidden !important;
+  overflow-y:auto;
+  list-style:none;
+  float:left;
+  position:relative;
+  display:inline;
+  max-width: 99%;
+  padding: 0px;
 }
 .epik_widget ul.product li.no_border{background:none;}
 
@@ -114,6 +124,7 @@ padding: 0px;
 
 #wishpot_pub_pro_widget_wrapper .widget300x250 ul.product
 {
+margin-top: 5px;
   height:199px;
   background: url(<?php echo $wishpot_plugin_url; ?>img/widget/bg1.png);
 position:relative;
@@ -136,7 +147,7 @@ padding: 0px;
 
 #wishpot_pub_pro_widget_wrapper .widget300x600 ul.product
 {
-  height:550px;
+  height:549px;
   background: url(<?php echo $wishpot_plugin_url; ?>img/widget/bg2.png);
 position:relative;
 display:inline;
@@ -191,8 +202,9 @@ padding: 0px;
 #wishpot_pub_pro_widget_wrapper .widget160x600 ul.product .thumb img,
 #wishpot_pub_pro_widget_wrapper .widget120x600 ul.product .thumb img
 {
-  width: 135px;
-  height:135px;
+  max-width: 135px;
+  width:     95%;
+  max-height:135px;
   margin-right: 5px;
 }
 
@@ -262,6 +274,7 @@ position:relative;
 display:inline;
 max-width: 99%;
 width:99%;
+text-align:center;
 }
 #wishpot_pub_pro_widget_wrapper .widget160x600  ul.product li
 {
@@ -291,21 +304,23 @@ width:99%;
 
 #wishpot_pub_pro_widget_wrapper .widget160x600 input[type="text"]
 {
-  margin: 0px 0px 8px 3px;
+  margin: 2px 0px 2px 2px;
   float:left;
   padding:0px;
   line-height:11px;
   font-size:11px;
-color:#999;
-width:150px;
-height:20px;
-border:1px solid #64a4fa;
+  color:#999;
+  width:150px;
+  height:20px;
+  border:1px solid #64a4fa;
 }
 #wishpot_pub_pro_widget_wrapper .widget160x600 ul.product li h3
 {
-float:left;font-size:11px; color:#999;
+  float:    left;
+  font-size:11px; 
+  color:#999;
   clear:none;
-  margin: 0px;
+  margin: 5px auto 5px 20px;
   text-align: center;
 }
 #wishpot_pub_pro_widget_wrapper .widget160x600 ul.product li p
@@ -327,17 +342,20 @@ float:left;font-size:11px; color:#999;
 {
 position:absolute;
 	text-indent:-9999px;
-	display:inline-block;height:15px;
-width:16px;background:url(<?php echo $wishpot_plugin_url; ?>img/widget/search.gif);
+	display:inline-block;
+height:15px;
+width:16px;
+background:url(<?php echo $wishpot_plugin_url; ?>img/widget/search.gif);
 right:5px;
-top:3px;
+top:26px;
 border:none;	
 }
 
 #wishpot_pub_pro_widget_wrapper .widget160x600 ul.product li .widget_btn_buy
 {
-  margin:  2px 0px 5px 0px;
+  margin:  2px 0px 5px 20px;
   float:left;
+  text-align: center;
   line-height:14px;
   height:14px;
   font-size:11px; 
@@ -389,9 +407,8 @@ padding-bottom:30px;
 }
 #wishpot_pub_pro_widget_wrapper .widget120x600 input[type="text"]
 {
-margin-bottom:8px;
-float:left;
-margin-left:3px;
+  margin:   2px 0px 2px 2px;
+  float:left;
   padding:0px;
 line-height:11px;
 font-size:11px;
@@ -422,15 +439,24 @@ color:#999;
 margin-left:10px;
   padding: 0px;
 }
+
+
+
 #wishpot_pub_pro_widget_wrapper .widget120x600  .widget_btn_search
 {
 position:absolute;
 	text-indent:-9999px;
-	display:inline-block;height:15px;
-width:16px;background:url(<?php echo $wishpot_plugin_url; ?>img/widget/search.gif);
+	display:inline-block;
+height:15px;
+width:16px;
+background:url(<?php echo $wishpot_plugin_url; ?>img/widget/search.gif);
 right:5px;
-top:9px;
+top:26px;
 border:none;	
+
+padding: 0px 0px 0px 0px;
+margin-left: -22px;
+
 }
 
 #wishpot_pub_pro_widget_wrapper .widget120x600 .widget_btn_buy{line-height:14px;height:14px;font-size:11px; color:#09f;font-weight:bold;
@@ -473,7 +499,7 @@ border-radius: 3px;
 .chrome #wishpot_pub_pro_widget_wrapper .widget300x250 .widget_btn_search,
 .chrome #wishpot_pub_pro_widget_wrapper .widget300x600 .widget_btn_search
 {
-  top: 9px;
+  top: 27px;
 }
 
 #wishpot_pub_pro_widget_wrapper .widget300x250 .widget_btn_search,
@@ -484,9 +510,8 @@ text-indent:-9999px;
 display:inline-block;
 height:15px;
 width:16px;
-top:3px;
+top:22px;
 right:5px;
-display:inline-block;
 background: transparent url(<?php echo $wishpot_plugin_url; ?>img/widget/search.gif) no-repeat;
 border: none;	
 padding: 0px 0px 0px 0px;

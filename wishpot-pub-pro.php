@@ -3,7 +3,7 @@
 Plugin Name: Wishpot Publisher Pro&copy; 
 Plugin URI: http://wishpot.com/wordpress-plugins/wishpot-publisher-pro
 Description: Wishpot Publisher Pro&copy; allows you to easily add product based ads to your wordpress powered website as widget in a sidebar or as pages.
-Version: 1.0.1
+Version: 1.0.2
 Author: Wishpot Inc
 Author URI: http://wishpot.com
 License: GPL2
