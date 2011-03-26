@@ -8,11 +8,6 @@ global $wishpot_plugin_url;
 ////////////////////////////////////////////////////////////////////////////////
 function wishpot_pub_pro_save_plugin_options()
 {
-ob_start();
-var_dump($_POST['wishpot_pub_pro_widget_ga']);
-$cc = ob_get_contents();
-ob_end_clean();
-file_put_contents('wishpot_ga.txt', $cc);
   if (!isset( $_POST['wishpot_pub_pro_widget_ga'] ))
   {
     $_POST['wishpot_pub_pro_widget_ga'] = 'off';
@@ -281,12 +276,12 @@ function wishpot_pub_pro_add_category()
     wp_create_category( $new_cat, $cat_parent ); 
 
     echo '<div id="message" class="updated fade">';
-    echo '<strong>' . __('Category added !!!', 'wishpot_pub_pro') . '</strong>.</div>';
+    echo '<strong>' . __('Category added !!!', 'wishpot-pub-pro') . '</strong>.</div>';
   }
   else
   {
     echo '<div id="message" class="error fade">';
-    echo '<strong>' . __('Category Name missing !!!', 'wishpot_pub_pro') . '</strong>.</div>';
+    echo '<strong>' . __('Category Name missing !!!', 'wishpot-pub-pro') . '</strong>.</div>';
   }
 
   return;
@@ -307,7 +302,6 @@ function     wishpot_pub_pro_reload_category()
              'order'         => 'desc',
              'hide_empty'    => 0
              );
-//    $biq_categories = get_categories( 'hide_empty=0&child_of=' . $cat_parent  ); 
   $temp_categories = get_categories( $args ); 
   foreach( $temp_categories as $temp_category )
   {
@@ -405,14 +399,12 @@ function wishpot_pub_pro_content($content = false)
          $wp_query,
          $wpdb;
 
-  $content = $post->post_content;
-
   if ( $content )
   {
 //    $content = apply_filters( 'the_content', $content);
-    $content = strip_shortcodes($content);
-    $content = str_replace(']]>', ']]&gt;', $content);
-    $content = strip_tags($content);
+//    $content = strip_shortcodes($content);
+//    $content = str_replace(']]>', ']]&gt;', $content);
+//    $content = strip_tags($content);
 
     //
     //  check for the short tag [wishpot_pub_pro_product_detail_page]
@@ -864,7 +856,7 @@ function wishpot_pub_pro_process_page( $args )
   '    <div class="wishpot_pub_pro_category"><h3>' . rawurldecode($wishpot_category) . ': ' . rawurldecode($wishpot_keywords) . '</h3></div>' . "\n" .
   '    <div class="wishpot_pub_pro_search">' . "\n" .
   '      <form class="form_item_list_search" method="post" action="">' . "\n" .
-  '        <input type="text" size="20" name="wishpot_pub_pro_item_list_search" id="wishpot_pub_pro_search_input" value="' . __('Search ....', 'wishpot_pub_pro') . '" />' . "\n" .
+  '        <input type="text" size="20" name="wishpot_pub_pro_item_list_search" id="wishpot_pub_pro_search_input" value="' . __('Search ....', 'wishpot-pub-pro') . '" />' . "\n" .
   '        <input type="submit" class="input_item_list_search" name="wishpot_pub_pro_item_list_search_submit" value="" />' . "\n" .
   '      </form>' . "\n" .
   '    </div>' . "\n" .

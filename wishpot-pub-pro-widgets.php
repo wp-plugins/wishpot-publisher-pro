@@ -81,13 +81,13 @@ class wishpot_pub_pro_Widget extends WP_Widget
 
 
     /* Widget settings. */
-    $widget_ops = array('classname' => 'wishpot_pub_pro', 'description' => __('Displays various types of Ads.','wishpot_pub_pro') );
+    $widget_ops = array('classname' => 'wishpot_pub_pro', 'description' => __('Displays various types of Ads.','wishpot-pub-pro') );
 
     /* Widget control settings. */
     $control_ops = array('width' => 420, 'height' => 510);
 
     /* Create the widget. */
-    $this->WP_Widget('wishpot_pub_pro', __('Wishpot Publisher Pro - Display Ads','wishpot_pub_pro'), $widget_ops, $control_ops);
+    $this->WP_Widget('wishpot_pub_pro', __('Wishpot Publisher Pro - Display Ads','wishpot-pub-pro'), $widget_ops, $control_ops);
   }
 	
 
@@ -157,7 +157,7 @@ class wishpot_pub_pro_Widget extends WP_Widget
          <table>' . "\n";
 /*
          <tr>
-           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_size') . '">' . __('Size', 'wishpot_pub_pro') . '</label></th>
+           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_size') . '">' . __('Size', 'wishpot-pub-pro') . '</label></th>
            <td class="wishpot_widget_option_middle_part">
              <select id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_size') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_size') . '" size="1">' . "\n";
 
@@ -173,13 +173,13 @@ class wishpot_pub_pro_Widget extends WP_Widget
     '
              </select>
            </td>
-           <td class="wishpot_widget_option_right_part">' . __('Size of the Ad', 'wishpot_pub_pro') . '</td> 
+           <td class="wishpot_widget_option_right_part">' . __('Size of the Ad', 'wishpot-pub-pro') . '</td> 
          </tr>
 */
     echo
     '
          <tr>
-           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_template') . '">' . __('Ad template', 'wishpot_pub_pro') . '</label></th>
+           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_template') . '">' . __('Ad template', 'wishpot-pub-pro') . '</label></th>
            <td class="wishpot_widget_option_middle_part">
              <select id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_template') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_template') . '" size="1">' . "\n";
 
@@ -197,12 +197,12 @@ class wishpot_pub_pro_Widget extends WP_Widget
            </td>
          </tr>
          <tr>
-           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_title') . '">' . __('Title', 'wishpot_pub_pro') . '</label></th>
+           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_title') . '">' . __('Title', 'wishpot-pub-pro') . '</label></th>
            <td class="wishpot_widget_option_middle_part"><input type="text" size="20" id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_title') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_title') . '" value="' . esc_attr($instance['wishpot_pub_pro_widget_ad_title']) . '" /></td>
            <td class="wishpot_widget_option_right_part">' . __('Custom Title - shown in sidebar.', 'bbnuke') . '</td>
          </tr>
          <tr>
-           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_hide_title') . '">' . __('Hide Title', 'wishpot_pub_pro') . '</label></th>
+           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_hide_title') . '">' . __('Hide Title', 'wishpot-pub-pro') . '</label></th>
            <td><input class="checkbox wishpot_widget_option_middle_part" type="checkbox" ' . checked( $instance['wishpot_pub_pro_widget_ad_hide_title'], 'on', false ) . ' id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_hide_title') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_hide_title') . '" /></td>
            <td class="wishpot_widget_option_right_part">' . __('Hide the title in the Ad box.', 'wishpot_pub_pro') . '</td>
          </tr>' . "\n";
@@ -210,7 +210,7 @@ class wishpot_pub_pro_Widget extends WP_Widget
 /*
 
          <tr>
-           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_theme') . '">' . __('Theme', 'wishpot_pub_pro') . '</label></th>
+           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_theme') . '">' . __('Theme', 'wishpot-pub-pro') . '</label></th>
            <td class="wishpot_widget_option_middle_part">
              <select id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_theme') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_theme') . '" size="1">' . "\n";
 
@@ -226,28 +226,28 @@ class wishpot_pub_pro_Widget extends WP_Widget
     '
              </select>
            </td>
-           <td class="wishpot_widget_option_right_part">' . __('Size and count of displayed products in the Ad', 'wishpot_pub_pro') . '</td> 
+           <td class="wishpot_widget_option_right_part">' . __('Size and count of displayed products in the Ad', 'wishpot-pub-pro') . '</td> 
          </tr>
 */
 
     echo
     '
          <tr>
-           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_fblike') . '">' . __('Enable FB Like', 'wishpot_pub_pro') . '</label></th>
+           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_fblike') . '">' . __('Enable FB Like', 'wishpot-pub-pro') . '</label></th>
            <td><input class="checkbox wishpot_widget_option_middle_part" type="checkbox" ' . checked( $instance['wishpot_pub_pro_widget_ad_fblike'], 'on', false ) . ' id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_fblike') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_fblike') . '" /></td>
          </tr>' . "\n";
 
 /*
          <tr>
-           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_fbshare') . '">' . __('Enable FB Share', 'wishpot_pub_pro') . '</label></th>
+           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_fbshare') . '">' . __('Enable FB Share', 'wishpot-pub-pro') . '</label></th>
            <td><input class="checkbox wishpot_widget_option_middle_part" type="checkbox" ' . checked( $instance['wishpot_pub_pro_widget_ad_fbshare'], 'on', false ) . ' id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_fbshare') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_fbshare') . '" /></td>
          </tr>
          <tr>
-           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_twshare') . '">' . __('Enable Twitter Share', 'wishpot_pub_pro') . '</label></th>
+           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_twshare') . '">' . __('Enable Twitter Share', 'wishpot-pub-pro') . '</label></th>
            <td><input class="checkbox wishpot_widget_option_middle_part" type="checkbox" ' . checked( $instance['wishpot_pub_pro_widget_ad_twshare'], 'on', false ) . ' id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_twshare') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_twshare') . '" /></td>
          </tr>
          <tr>
-           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_type') . '">' . __('Type', 'wishpot_pub_pro') . '</label></th>
+           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_type') . '">' . __('Type', 'wishpot-pub-pro') . '</label></th>
            <td class="wishpot_widget_option_middle_part">
              <select id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_type') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_type') . '" size="1">' . "\n";
 
@@ -263,14 +263,14 @@ class wishpot_pub_pro_Widget extends WP_Widget
     '
              </select>
            </td>
-           <td class="wishpot_widget_option_right_part">' . __('Size and count of displayed products in the Ad', 'wishpot_pub_pro') . '</td> 
+           <td class="wishpot_widget_option_right_part">' . __('Size and count of displayed products in the Ad', 'wishpot-pub-pro') . '</td> 
          </tr>
 */
 
     echo
     '
          <tr>
-           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_category') . '">' . __('Category', 'wishpot_pub_pro') . '</label></th>
+           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_category') . '">' . __('Category', 'wishpot-pub-pro') . '</label></th>
            <td class="wishpot_widget_option_middle_part">
              <select id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_category') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_category') . '" size="1">' . "\n";
 
@@ -296,19 +296,19 @@ class wishpot_pub_pro_Widget extends WP_Widget
            </td>
          </tr>
          <tr>
-           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_keywords') . '">' . __('Keywords', 'wishpot_pub_pro') . '</label></th>
+           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_keywords') . '">' . __('Keywords', 'wishpot-pub-pro') . '</label></th>
            <td class="wishpot_widget_option_middle_part"><input type="text" size="30" id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_keywords') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_keywords') . '" value="' . esc_attr($instance['wishpot_pub_pro_widget_ad_keywords']) . '" /></td>
          </tr>
          <tr>
-           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_overwrite_catskeyw') . '"><b>' . __('Enable posts to overwrite category and keywords', 'wishpot_pub_pro') . '</b></label></th>
+           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_overwrite_catskeyw') . '"><b>' . __('Enable posts to overwrite category and keywords', 'wishpot-pub-pro') . '</b></label></th>
            <td><input class="checkbox wishpot_widget_option_middle_part" type="checkbox" ' . checked( $instance['wishpot_pub_pro_widget_ad_overwrite_catskeyw'], 'on', false ) . ' id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_overwrite_catskeyw') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_overwrite_catskeyw') . '" /></td>
          </tr>
          <tr>
-           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_placement_id') . '">' . __('Placement Id', 'wishpot_pub_pro') . '</label></th>
+           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_placement_id') . '">' . __('Placement Id', 'wishpot-pub-pro') . '</label></th>
            <td class="wishpot_widget_option_middle_part"><input type="text" size="20" id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_placement_id') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_placement_id') . '" value="' . esc_attr($instance['wishpot_pub_pro_widget_ad_placement_id']) . '" /></td>
          </tr>
          <tr>
-           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_country') . '">' . __('Country', 'wishpot_pub_pro') . '</label></th>
+           <th class="wishpot_widget_option_left_part"><label for="' . $this->get_field_name('wishpot_pub_pro_widget_ad_country') . '">' . __('Country', 'wishpot-pub-pro') . '</label></th>
            <td class="wishpot_widget_option_middle_part">
              <select id="' . $this->get_field_id('wishpot_pub_pro_widget_ad_country') . '" name="' . $this->get_field_name('wishpot_pub_pro_widget_ad_country') . '" size="1">' . "\n";
 

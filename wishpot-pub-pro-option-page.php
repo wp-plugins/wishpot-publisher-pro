@@ -44,8 +44,8 @@ function wishpot_pub_pro_plugin_print_option_page()
   '  <hr />' . "\n" .
   '  <p>' . "\n" .
   '    <b>Welcome to Wishpot Publisher Pro&copy; WP Tool!</b><br />' . "\n" .
-  '    ' . __('This free plugin allows you to display various ads on your blog. You can display them in any widget area or on wordpress pages.', 'wishpot_pub_pro') . '<br />' . "\n" .
-  '    ' . __('The ads can be customized in size and count of visible products.', 'wishpot_pub_pro') . "\n" .
+  '    ' . __('This free plugin allows you to display various ads on your blog. You can display them in any widget area or on wordpress pages.', 'wishpot-pub-pro') . '<br />' . "\n" .
+  '    ' . __('The ads can be customized in size and count of visible products.', 'wishpot-pub-pro') . "\n" .
   '  </p>' . "\n" .
   '  <hr />' . "\n" .
   '  <div class="clear"></div>' . "\n" . 
@@ -59,16 +59,19 @@ function wishpot_pub_pro_plugin_print_option_page()
   '      <div class="has-sidebar-content">' . "\n" .
   '        <div class="meta-box-sortables ui-sortable" id="normal-sortables" unselectable="on">' . "\n" .
   '          <div class="postbox ui-droppable" id="wishpot-settings">' . "\n" .
-  '            <div title="' . __('Zum umschalten klicken', 'wishpot_pub_pro') . '" class="handlediv"><br /></div>' . "\n" .
-  '            <h3 class="hndle">' . __('Global Settings', 'wishpot_pub_pro') . '</h3>' . "\n" .
+  '            <div title="' . __('Zum umschalten klicken', 'wishpot-pub-pro') . '" class="handlediv"><br /></div>' . "\n" .
+  '            <h3 class="hndle">' . __('Global Settings', 'wishpot-pub-pro') . '</h3>' . "\n" .
   '            <div class="inside">' . "\n" .
   '              <b>Import from ' . $url_display . '</b>' . "\n" .
   '              <table class="form-table">' . "\n" .
+  '              <tr><th class="wishpot_option_left_part"><label for="">' . __('Add New Categories', 'wishpot-pub-pro') . '</label></th>' . "\n" .
+  '                  <td><select name="wishpot_pub_pro_cats_select[]" id="wishpot_pub_pro_cats_select_tag" multiple="multiple" size="5">' . "\n";
+
+/*
   '              <tr><th class="wishpot_option_left_part"><label for="wishpot_tracking_id">Enter your WishPot Tracking Id</label></th>' . "\n" .
   '                  <td><input type="text" id="wishpot_pub_pro_tracking_id_id" name="wishpot_pub_pro_tracking_id" value="' . $wishpot_pub_pro_tracking_id . '" /></td>' . "\n" .
   '              </tr>' . "\n" .
-  '              <tr><th class="wishpot_option_left_part"><label for="">' . __('Add New Categories', 'wishpot_pub_pro') . '</label></th>' . "\n" .
-  '                  <td><select name="wishpot_pub_pro_cats_select[]" id="wishpot_pub_pro_cats_select_tag" multiple="multiple" size="5">' . "\n";
+*/
 
   foreach( $wishpot_categories as $cat)
   { 
@@ -101,8 +104,8 @@ function wishpot_pub_pro_plugin_print_option_page()
 
   echo
   '              <tr><th class="wishpot_option_left_part"><label for="wishpot_pub_pro_wdget_ga">Google Analytics Code: </label></th>' . "\n" .
-  '                  <td><input type="checkbox" name="wishpot_pub_pro_widget_ga" value="open" ' . $checked . ' />Add Google Analytics Code to the widgets<br />' . "\n" .
-  '                  We use Google Analytics for statistical purpose and to improve our service.<br /><br />' . "\n" .
+  '                  <td><input type="checkbox" name="wishpot_pub_pro_widget_ga" value="open" ' . $checked . ' />' . __('Add Google Analytics Code to the widgets', 'wishpot-pub-pro') . '<br />' . "\n" .
+  '                  ' . __('We use Google Analytics for statistical purpose and to improve our service.', 'wishpot-pub-pro') . '<br /><br />' . "\n" .
   '                  </td>' . "\n" .
   '              </tr>' . "\n" .
   '              </table>' . "\n" .
@@ -113,14 +116,14 @@ function wishpot_pub_pro_plugin_print_option_page()
   '            </div>' . "\n" .
   '          </div>' . "\n" .
   '          <div class="postbox ui-droppable" id="spinning-text-div">' . "\n" .
-  '            <div title="' . __('Zum umschalten klicken', 'wishpot_pub_pro') . '" class="handlediv"><br /></div>' . "\n" .
-  '            <h3 class="hndle">' . __('Product Pages', 'wishpot_pub_pro') . '</h3>' . "\n" .
+  '            <div title="' . __('Zum umschalten klicken', 'wishpot-pub-pro') . '" class="handlediv"><br /></div>' . "\n" .
+  '            <h3 class="hndle">' . __('Product Pages', 'wishpot-pub-pro') . '</h3>' . "\n" .
   '            <div class="inside">' . "\n" .
   '              <p>' . "\n" .
-  '                ' . __('Settings for the Product Pages.', 'wishpot_pub_pro') . "\n" .
+  '                ' . __('Settings for the Product Pages.', 'wishpot-pub-pro') . "\n" .
   '              </p>' . "\n" .
   '              <table class="form-table">' . "\n" .
-  '              <tr><th class="wishpot_option_left_part"><label for="">' . __('How many products should be displayed on one page', 'wishpot_pub_pro') . '</label></th>' . "\n" .
+  '              <tr><th class="wishpot_option_left_part"><label for="">' . __('How many products should be displayed on one page', 'wishpot-pub-pro') . '</label></th>' . "\n" .
   '                  <td>' . "\n" .
   '                    <div class="margintb">' . "\n" .
   '                      <ul class="one-row"><li>' . "\n";

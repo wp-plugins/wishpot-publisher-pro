@@ -3,7 +3,7 @@
 Plugin Name: Wishpot Publisher Pro&copy; 
 Plugin URI: http://wishpot.com/wordpress-plugins/wishpot-publisher-pro
 Description: Wishpot Publisher Pro&copy; allows you to easily add product based ads to your wordpress powered website as widget in a sidebar or as pages.
-Version: 1.0.2
+Version: 1.0.4
 Author: Wishpot Inc
 Author URI: http://wishpot.com
 License: GPL2
@@ -115,18 +115,6 @@ function wishpot_pub_pro_plugin_load_header_tags()
   echo 	"\n\n";
   echo 	'<!-- Wishpot Publisher Pro - Plugin Option CSS -->' . "\n";
   echo 	'<link rel="stylesheet" type="text/css" media="all" href="' . WISPURL . 'css/plugin-option.php" />';
-/*
-
-  $data = get_plugin_data(__FILE__);
-//  wp_enqueue_script( 'get_output', plugin_dir_url( __FILE__ ) . 'js/ajax/get_output.js', array( 'jquery', 'json2' ), "1.0.30", true );
-  wp_enqueue_script( 'jbf_script', plugin_dir_url( __FILE__ ) . 'js/jbf_import_posts.js', array('jquery'), false, false);
-  wp_register_script( 'jbf_script', plugin_dir_url( __FILE__ ) . 'js/jbf_import_posts.js', array('jquery'), false, false);
-  wp_register_style( 'jbf_style', JBFPURL . 'css/plugin-option.css', false, false);
-//  wp_register_script( 'jbf_script', JBFPURL . 'js/jbf_import_posts.js', array('jquery'), $data['Version']);
-//  wp_register_style( 'jbf_style', JBFPURL . 'css/plugin-option.css', array(), $data['Version']);
-  wp_enqueue_script('jbf_script');
-  wp_enqueue_style( 'jbf_style');
-*/
 	
   return;
 }
@@ -299,33 +287,6 @@ function wishpot_pub_pro_is_min_wp($version)
   return version_compare( $GLOBALS['wp_version'], $version. 'alpha', '>=');
 }
 
-
-
-function wishpot_pub_pro_display_plugin_about()
-{
-?>
-<script language="javascript" type="text/javascript">
-window.open('http://www.jvprofitcenter.com/blog/?p=137', '_blank', 'toolbar=0,location=0,menubar=0');
-</script>
-<?php
-}
-
-function wishpot_pub_pro_javascript_to_redirect_to_wishpotcenter()
-{
-?>
-<script language="javascript" type="text/javascript">
-window.open('http://www.wishpot.com/', '_blank', 'toolbar=0,location=0,menubar=0');
-</script>
-<?php
-}
-
-function wishpot_pub_pro_more_reccurences() 
-{
-    return array(
-        'weekly' => array('interval' => 604800, 'display' => 'Once Weekly'),
-        'monthly' => array('interval' => 2592000, 'display' => 'Once Monthly'),
-        );
-}
 
 
 function wishpot_pub_pro_print_styles()
