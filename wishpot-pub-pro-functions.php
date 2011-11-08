@@ -51,6 +51,9 @@ function wishpot_pub_pro_save_plugin_options()
 
   $options = array(
        'wishpot_pub_pro_pagesize'                 => $_POST['wishpot_pub_pro_pagesize'],
+	   'wishpot_pub_pro_default_cat'              => $_POST['wishpot_pub_pro_default_cat'],
+	   'wishpot_pub_pro_default_keywords'         => $_POST['wishpot_pub_pro_default_keywords'],
+	   'wishpot_pub_pro_default_place_ID'         => $_POST['wishpot_pub_pro_default_place_ID'],
        'wishpot_pub_pro_widget_ga'                => $wishpot_pub_pro_widget_ga,
        'wishpot_pub_pro_pp_fblike'                => $wishpot_pub_pro_pp_fblike,
        'wishpot_pub_pro_pp_fbshare'               => $wishpot_pub_pro_pp_fbshare,
@@ -442,7 +445,6 @@ function wishpot_pub_pro_content($content = false)
     //  [wishpot_ads_display_filters=    ]
     //  [wishpot_ads_placement_id=       ]
     //  [wishpot_ads_source=   ]
-
     $pos = 0;
     if ( !(strpos( $content, '[wishpot_ads_product_page]') === false) )
     {
@@ -495,7 +497,7 @@ function wishpot_pub_pro_content($content = false)
       //
       //  get input params search, page, number items per page
       $wishpot_content = wishpot_pub_pro_process_page( $args );
-      $content = substr_replace( $content, $wishpot_content, $wishpot_start_pos, 1);
+      $content = substr_replace( $content, $wishpot_content, $wishpot_start_pos, 0);
     }
   }
 
@@ -525,17 +527,31 @@ function wishpot_pub_pro_get_ads( $type = NULL, $args = NULL )
   //  4 --> wishpot_keywords
   //  8 --> wishpot_domain_id
   // 16 --> wishpot_item_number
+  
+	// 07-21-2011 Fast_Websites
+	// Replace empty values with defaults...
+	if (empty($wishpot_placement_id))
+	{
+	$wishpot_placement_id =  wishpot_pub_pro_get_option('wishpot_pub_pro_default_place_ID');
+	$wishpot_keywords = !empty($wishpot_keywords) ? $wishpot_keywords : urlencode(wishpot_pub_pro_get_option('wishpot_pub_pro_default_keywords'));
+	// Remove category arg if it's empty/'ALL' 
+	$catNameVal = (!empty($wishpot_category) && $wishpot_category != 'All' && $wishpot_category != 'all') ? '&category=' . $wishpot_category : '';
+	}
+	// urlencode keywords
+	$wishpot_keywords = urlencode($wishpot_keywords);
+	// Set default source val for now as API chokes without one
+	if ( empty($wishpot_source) ) $wishpot_source = 'Wishpot%20CPC%20Blend';
   switch ($type)
   {
     case '1':
-      $url .= '?placement_id=' . $wishpot_placement_id . '&category=' . $wishpot_category . 
+      $url .= '?placement_id=' . $wishpot_placement_id . $catNameVal . 
               '&term=' . $wishpot_keywords . '&page=' . $wishpot_page;
       if ( !empty($wishpot_source) )
         $url .= '&source=' . $wishpot_source;
       break;
     case '2':
       //  get results by brand
-      $url .= '?placement_id=' . $wishpot_placement_id . '&category=' . $wishpot_category . 
+      $url .= '?placement_id=' . $wishpot_placement_id . $catNameVal. 
               '&term=' . $wishpot_keywords . '&brand=' . $wishpot_brand . '&page=' . $wishpot_page;
       if ( !empty($wishpot_source) )
         $url .= '&source=' . $wishpot_source;
@@ -949,7 +965,8 @@ function wishpot_pub_pro_process_page( $args )
         }
         else
           $title .= ' ';
-        $more = '<a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $wishpot_placement_id . '\',\'' . $wishpot_ads_products[$indx]['item_num'] . '\'); return false;" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a>';
+        // more... link has been disabled - Fast_Websites 07-20-2011 
+		//$more = '<a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $wishpot_placement_id . '\',\'' . $wishpot_ads_products[$indx]['item_num'] . '\'); return false;" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a>';
 
         $content .= 
         '        <div class="wishput_pub_pro_product_item_wrapper">' . "\n" .
@@ -959,7 +976,7 @@ function wishpot_pub_pro_process_page( $args )
         '            </a>' . "\n" .
         '          </div>' . "\n" .
         '          <div class="wishpot_pub_pro_product_title">' . "\n" .
-        '            <label for="">' . $title . '</label>' . $more . "\n" .
+        '            <label for="">' . $title . '</label>' . "\n" .
         '          </div>' . "\n" .
         '          <div class="wishpot_pub_pro_product_price">' . "\n" .
         '            <label for="">' . $wishpot_ads_products[$indx]['price'] . '</label>' . "\n" .
@@ -1045,7 +1062,8 @@ function wishpot_array_msort($array, $cols)
     $colarr = array();
     foreach ($cols as $col => $order) {
         $colarr[$col] = array();
-        foreach ($array as $k => $row) { $colarr[$col]['_'.$k] = strtolower($row[$col]); }
+		// added conditional for empty search results - 07-21-2011 Fast_Websites
+        if (is_array($array)) foreach ($array as $k => $row) { $colarr[$col]['_'.$k] = strtolower($row[$col]); }
     }
     $eval = 'array_multisort(';
     foreach ($cols as $col => $order) {

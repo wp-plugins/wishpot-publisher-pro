@@ -451,7 +451,13 @@ function  wishpot_pub_pro_generate_widget($instance)
         $html .=
         '<li>
            <a href="' . $wishpot_ads_products[$i]['url'] . '" class="thumb"><img src="' . $wishpot_ads_products[$i]['image_source'] . '" alt="" /></a>
-           <p>' . $wishpot_ads_products[$i]['title'] . ' <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a></p>
+           <p>' . $wishpot_ads_products[$i]['title'];
+		   
+		   // more... link has been disabled - Fast_Websites 07-21-2011 
+		   /*
+		   <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a>
+		   */
+		   $html .= '</p>
            <div class="wishpot_form" style="display:none">
              <input name="pkey" value="' . $placement_id . '" type="hidden"/>
              <input name="WishUrl" value="' . $wishpot_ads_products[$i]['url'] . '" type="hidden" />
@@ -485,7 +491,14 @@ function  wishpot_pub_pro_generate_widget($instance)
         $html .=
         '<li>
            <a href="' . $wishpot_ads_products[$i]['url'] . '" class="thumb"><img src="' . $wishpot_ads_products[$i]['image_source'] . '" alt="" /></a>
-           <p>' . $wishpot_ads_products[$i]['title'] . ' <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a></p>
+           <p>' . $wishpot_ads_products[$i]['title'];
+		   
+		   /*
+		   Totally nuked any mention of "more..." - Fast_Websites 07-25-2011
+		   <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a>
+		   */
+		   
+		$html .= '</p>
            <div class="wishpot_form" style="display:none">
              <input name="pkey" value="' . $wishpot_placement_id . '" type="hidden"/>
              <input name="WishUrl" value="' . $wishpot_ads_products[$i]['url'] . '" type="hidden" />
@@ -519,7 +532,14 @@ function  wishpot_pub_pro_generate_widget($instance)
         $html .=
         '<li>
            <a href="' . $wishpot_ads_products[$i]['url'] . '" class="thumb"><img src="' . $wishpot_ads_products[$i]['image_source'] . '" alt="" /></a>
-           <p>' . $wishpot_ads_products[$i]['title'] . ' <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a></p>
+           <p>' . $wishpot_ads_products[$i]['title'];
+		   
+		   /*
+		   Totally nuked any mention of "more..." - Fast_Websites 07-25-2011
+		   <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a>
+		   */
+		   
+		$html .= '</p>
            <div class="wishpot_form" style="display:none">
              <input name="pkey" value="' . $wishpot_placement_id . '" type="hidden"/>
              <input name="WishUrl" value="' . $wishpot_ads_products[$i]['url'] . '" type="hidden" />
@@ -553,7 +573,14 @@ function  wishpot_pub_pro_generate_widget($instance)
         $html .=
         '<li>
            <a href="' . $wishpot_ads_products[$i]['url'] . '" class="thumb"><img src="' . $wishpot_ads_products[$i]['image_source'] . '" alt="" /></a>
-           <p>' . $wishpot_ads_products[$i]['title'] . ' <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a></p>
+           <p>' . $wishpot_ads_products[$i]['title'];
+		   
+		   /*
+		   Totally nuked any mention of "more..." - Fast_Websites 07-25-2011
+		   <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a>
+		   */
+		   
+		$html .= '</p>
            <div class="wishpot_form" style="display:none">
              <input name="pkey" value="' . $wishpot_placement_id . '" type="hidden"/>
              <input name="WishUrl" value="' . $wishpot_ads_products[$i]['url'] . '" type="hidden" />
@@ -587,7 +614,14 @@ function  wishpot_pub_pro_generate_widget($instance)
         $html .=
         '<li>
            <a href="' . $wishpot_ads_products[$i]['url'] . '" class="thumb"><img src="' . $wishpot_ads_products[$i]['image_source'] . '" alt="" /></a>
-           <p>' . $wishpot_ads_products[$i]['title'] . ' <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a></p>
+           <p>' . $wishpot_ads_products[$i]['title'];
+		   
+		   /*
+		   Totally nuked any mention of "more..." - Fast_Websites 07-25-2011
+		   <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a>
+		   */
+		   
+		$html .= '</p>
            <div class="wishpot_form" style="display:none">
              <input name="pkey" value="' . $wishpot_placement_id . '" type="hidden"/>
              <input name="WishUrl" value="' . $wishpot_ads_products[$i]['url'] . '" type="hidden" />
@@ -621,7 +655,14 @@ function  wishpot_pub_pro_generate_widget($instance)
         $html .=
         '<li>
            <a href="' . $wishpot_ads_products[$i]['url'] . '" class="thumb"><img src="' . $wishpot_ads_products[$i]['image_source'] . '" alt="" /></a>
-           <p>' . $wishpot_ads_products[$i]['title'] . ' <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a></p>
+           <p>' . $wishpot_ads_products[$i]['title'];
+		   
+		   /*
+		   Totally nuked any mention of "more..." - Fast_Websites 07-25-2011
+		   <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a>
+		   */
+		   
+		$html .= '</p>
            <div class="wishpot_form" style="display:none">
              <input name="pkey" value="' . $wishpot_placement_id . '" type="hidden"/>
              <input name="WishUrl" value="' . $wishpot_ads_products[$i]['url'] . '" type="hidden" />
@@ -655,7 +696,14 @@ function  wishpot_pub_pro_generate_widget($instance)
         $html .=
         '<li>
            <a href="' . $wishpot_ads_products[$i]['url'] . '" class="thumb"><img src="' . $wishpot_ads_products[$i]['image_source'] . '" alt="" /></a>
-           <p>' . $wishpot_ads_products[$i]['title'] . ' <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a></p>
+           <p>' . $wishpot_ads_products[$i]['title'];
+		   
+		   /*
+		   Totally nuked any mention of "more..." - Fast_Websites 07-25-2011
+		   <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a>
+		   */
+		   
+		$html .= '</p>
            <div class="wishpot_form" style="display:none">
              <input name="pkey" value="' . $wishpot_placement_id . '" type="hidden"/>
              <input name="WishUrl" value="' . $wishpot_ads_products[$i]['url'] . '" type="hidden" />
@@ -689,7 +737,14 @@ function  wishpot_pub_pro_generate_widget($instance)
         $html .=
         '<li>
            <a href="' . $wishpot_ads_products[$i]['url'] . '" class="thumb"><img src="' . $wishpot_ads_products[$i]['image_source'] . '" alt="" /></a>
-           <p>' . $wishpot_ads_products[$i]['title'] . ' <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a></p>
+           <p>' . $wishpot_ads_products[$i]['title'];
+		   
+		   /*
+		   Totally nuked any mention of "more..." - Fast_Websites 07-25-2011
+		   <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a>
+		   */
+		   
+		$html .= '</p>
            <div class="wishpot_form" style="display:none">
              <input name="pkey" value="' . $wishpot_placement_id . '" type="hidden"/>
              <input name="WishUrl" value="' . $wishpot_ads_products[$i]['url'] . '" type="hidden" />
@@ -723,7 +778,14 @@ function  wishpot_pub_pro_generate_widget($instance)
         $html .=
         '<li>
            <a href="' . $wishpot_ads_products[$i]['url'] . '" class="thumb"><img src="' . $wishpot_ads_products[$i]['image_source'] . '" alt="" /></a>
-           <p>' . $wishpot_ads_products[$i]['title'] . ' <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a></p>
+           <p>' . $wishpot_ads_products[$i]['title'];
+		   
+		   /*
+		   Totally nuked any mention of "more..." - Fast_Websites 07-25-2011
+		   <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a>
+		   */
+		   
+		$html .= '</p>
            <div class="wishpot_form" style="display:none">
              <input name="pkey" value="' . $wishpot_placement_id . '" type="hidden"/>
              <input name="WishUrl" value="' . $wishpot_ads_products[$i]['url'] . '" type="hidden" />
@@ -757,7 +819,14 @@ function  wishpot_pub_pro_generate_widget($instance)
         $html .=
         '<li>
            <a href="' . $wishpot_ads_products[$i]['url'] . '" class="thumb"><img src="' . $wishpot_ads_products[$i]['image_source'] . '" alt="" /></a>
-           <p>' . $wishpot_ads_products[$i]['title'] . ' <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a></p>
+           <p>' . $wishpot_ads_products[$i]['title'];
+		   
+		   /*
+		   Totally nuked any mention of "more..." - Fast_Websites 07-25-2011
+		   <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a>
+		   */
+		   
+		$html .= '</p>
            <div class="wishpot_form" style="display:none">
              <input name="pkey" value="' . $wishpot_placement_id . '" type="hidden"/>
              <input name="WishUrl" value="' . $wishpot_ads_products[$i]['url'] . '" type="hidden" />
@@ -791,7 +860,14 @@ function  wishpot_pub_pro_generate_widget($instance)
         $html .=
         '<li>
            <a href="' . $wishpot_ads_products[$i]['url'] . '" class="thumb"><img src="' . $wishpot_ads_products[$i]['image_source'] . '" alt="" /></a>
-           <p>' . $wishpot_ads_products[$i]['title'] . ' <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a></p>
+           <p>' . $wishpot_ads_products[$i]['title'];
+		   
+		   /*
+		   Totally nuked any mention of "more..." - Fast_Websites 07-25-2011
+		   <a href="javascript:void(0)" onclick="wishpot_pub_pro_show_product_details(\'' . $placement_id . '\', \'' . $wishpot_ads_products[$i]['item_num'] . '\');" title="' . __('See more product details', 'wishpot-pub-pro') . '" target="_blank">' . __('More ...', 'wishpot-pub-pro') . '</a>
+		   */
+		   
+		$html .= '</p>
            <div class="wishpot_form" style="display:none">
              <input name="pkey" value="' . $wishpot_placement_id . '" type="hidden"/>
              <input name="WishUrl" value="' . $wishpot_ads_products[$i]['url'] . '" type="hidden" />

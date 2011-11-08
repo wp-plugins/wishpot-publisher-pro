@@ -11,8 +11,10 @@ function wishpot_pub_pro_plugin_print_option_page()
   $wishpot_pub_pro_pp_fblike       = wishpot_pub_pro_get_option('wishpot_pub_pro_pp_fblike');
   $wishpot_pub_pro_pp_fbshare      = wishpot_pub_pro_get_option('wishpot_pub_pro_pp_fbshare');
   $wishpot_pub_pro_pp_twshare      = wishpot_pub_pro_get_option('wishpot_pub_pro_pp_twshare');
-
-
+	$wishpot_pub_pro_default_cat 	= wishpot_pub_pro_get_option('wishpot_pub_pro_default_cat');
+	$wishpot_pub_pro_default_keywords 	= wishpot_pub_pro_get_option('wishpot_pub_pro_default_keywords');	
+	$wishpot_pub_pro_default_place_ID 	= wishpot_pub_pro_get_option('wishpot_pub_pro_default_place_ID');
+	
   $arr_pagesize = array(
                     '15'   => '3x5',
                     '18'   => '3x6',
@@ -61,11 +63,17 @@ function wishpot_pub_pro_plugin_print_option_page()
   '          <div class="postbox ui-droppable" id="wishpot-settings">' . "\n" .
   '            <div title="' . __('Zum umschalten klicken', 'wishpot-pub-pro') . '" class="handlediv"><br /></div>' . "\n" .
   '            <h3 class="hndle">' . __('Global Settings', 'wishpot-pub-pro') . '</h3>' . "\n" .
-  '            <div class="inside">' . "\n" .
-  '              <b>Import from ' . $url_display . '</b>' . "\n" .
-  '              <table class="form-table">' . "\n" .
+  '            <div class="inside">' . "\n".
+  // Categories have been disabled for now - 7/20/2011 Fast_Websites
+//  '              <b>Import from ' . $url_display . '</b>' . "\n" .
+  '              <table class="form-table">' . "\n";
+  
+  // Categories have been disabled for now - 7/20/2011 Fast_Websites
+  /*
   '              <tr><th class="wishpot_option_left_part"><label for="">' . __('Add New Categories', 'wishpot-pub-pro') . '</label></th>' . "\n" .
   '                  <td><select name="wishpot_pub_pro_cats_select[]" id="wishpot_pub_pro_cats_select_tag" multiple="multiple" size="5">' . "\n";
+*/
+// END OF CATEGORIES SECTION
 
 /*
   '              <tr><th class="wishpot_option_left_part"><label for="wishpot_tracking_id">Enter your WishPot Tracking Id</label></th>' . "\n" .
@@ -73,6 +81,8 @@ function wishpot_pub_pro_plugin_print_option_page()
   '              </tr>' . "\n" .
 */
 
+// Categories have been disabled for now - 7/20/2011 Fast_Websites
+/*
   foreach( $wishpot_categories as $cat)
   { 
     if ( in_array( $cat->cat_ID, $wishpot_pub_pro_cats ) )
@@ -96,6 +106,8 @@ function wishpot_pub_pro_plugin_print_option_page()
   '                   <input type="submit" class="button-primary" value="Reload Categories" id="wishpot_pub_pro_reload_cats_btn" name="wishpot_pub_pro_reload_cats_btn" onclick="document.getElementById(nameofDivWait).style.display=\'inline\';this.form.submit();" /><br />' . "\n" .    
   '                   </td>' . "\n" .
   '              </tr>' . "\n";
+*/
+// END OF ADD NEW CATEGORIES 
 
   if ( $wishpot_pub_pro_widget_ga == 'on' )
     $checked = ' checked="checked" ';
@@ -181,13 +193,57 @@ function wishpot_pub_pro_plugin_print_option_page()
   '              <tr><th class="wishpot_option_left_part"><label for=""></label></th>' . "\n" .
   '                  <td></td>' . "\n" .
   '              </tr>' . "\n" .
-  '              </table>' . "\n" .
-  '              <div class="submit">' . "\n" .
+  '              </table>' . "\n";
+  
+// default options - Fast_Websites 07-21-2011
+echo <<<EOF
+<p>Settings for Default Listing</p>
+<p><i>Listing to use if there is no listing specified for a Wishpot ad page.</i></p>
+<table class="form-table">
+	<tr>
+		<th class="wishpot_option_left_part">
+		<label for="">Category</label>
+		</th>
+		<td>
+		<input type='text' name='wishpot_pub_pro_default_cat' value='
+EOF;
+echo $wishpot_pub_pro_default_cat;
+echo <<<EOF
+' size='20' />
+		</td>
+	</tr>
+	<tr>
+		<th class="wishpot_option_left_part">
+		<label for="">Keywords</label>
+		</th>
+		<td>
+		<input type='text' name='wishpot_pub_pro_default_keywords' value='
+EOF;
+echo $wishpot_pub_pro_default_keywords;
+echo <<<EOF
+' size='20' />
+		</td>
+	</tr>
+	<tr>
+		<th class="wishpot_option_left_part">
+		<label for="">Placement ID</label>
+		</th>
+		<td>
+		<input type='text' name='wishpot_pub_pro_default_place_ID' value='
+EOF;
+echo $wishpot_pub_pro_default_place_ID;
+echo <<<EOF
+' size='20' />
+		</td>
+	</tr>	
+</table>
+EOF;
+echo '              <div class="submit">' . "\n" .
   '                <div class="div-wait" id="divwaitspt0"><img src="' . WISPURL . 'img/loading.gif" /></div>' . "\n" .
   '                <input type="submit" class="button-secondary" value="Save Changes" id="wishpot_pub_pro_save_btn_prod" name="wishpot_pub_pro_update_options_btn" onclick="document.getElementById(nameofDivWait).style.display=\'inline\';this.form.submit();" />' . "\n" .
   '                <div class="right-bottom"><a href="#Top">Back to Top</a></div>' . "\n" .
-  '              </div>' . "\n" .
-  '              <br /><hr /><br />' . "\n" .
+  '              </div>' . "\n" . 
+  '              <br /><hr /><br />' . "\n".
   '              <table>' . "\n" .
   '              <tr>' . "\n" .
   '                  <td>' . "\n" .
@@ -236,8 +292,8 @@ function wishpot_pub_pro_plugin_print_option_page()
   '          </div>' . "\n" .
   '        </div>' . "\n" .
   '      </div>' . "\n" .
-  '    </div>' . "\n" .
-  '    <div class="postbox-container" id="plugin-news">' . "\n" .
+  '    </div>' . "\n".
+  '<div class="postbox-container" id="plugin-news">' . "\n" .
   '      <div class="meta-box-sortables ui-sortable" id="side-sortables" unselectable="on">' . "\n" .
   '        <div class="postbox ui-droppable" id="wishpot_info">' . "\n" .
   '          <div title="' . __('Zum umschalten klicken', 'wishpot-pub-pro') . '" class="handlediv"><br /></div>' . "\n" .
@@ -279,12 +335,8 @@ function wishpot_pub_pro_plugin_print_option_page()
   '    </div>' . "\n" .
   '  </div>' . "\n" .
   '  </form>' . "\n" .
-  '</div' . "\n";
+  '</div>' . "\n";
  
 }
-
-
-
-
 
 ?>
