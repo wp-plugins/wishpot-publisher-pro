@@ -34,7 +34,7 @@ header('Content-type: text/css');
 .wishpot_product_page_list_sidebar
 {
   position:      relative;
-  display:       none;
+  display:       inline;
   float:         left;
   width:         120px;
 }
@@ -74,7 +74,7 @@ header('Content-type: text/css');
 .wishpot_product_page_list
 {
   display:       inline;
-  float:         left;
+  float:         right;
 }
 
 .wishpot_pub_pro_product_items_row
