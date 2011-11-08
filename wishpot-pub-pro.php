@@ -62,18 +62,22 @@ add_action( 'wp_ajax_nopriv_wishpot_pub_pro_ajax_action', 'wishpot_pub_pro_ajax_
 ////////////////////////////////////////////////////////////////////////////////
 function wishpot_pub_pro_plugin_activation() 
 {
-  //  check if default cat exists
+
+/* Pre-installed categories have been disabled for now - 07-21-2011 Fast_Websites
+	//  check if default cat exists
   if ( !get_cat_ID('Wispot Publisher Pro') ) 
   {
     wp_create_category( 'Wishpot Publisher Pro' );
   }
   wishpot_pub_pro_reload_category();
+*/
 
   add_option( 'wishpot_pub_pro_options', array(), '', 'no');
   wishpot_pub_pro_set_option_defaults();
 
   wishpot_pub_pro_migrate_old_options();
-
+  wishpot_pub_pro_add_sample_page();
+  
   //  check if product detail page exists
   wishpot_pub_pro_create_product_search_results_page();
 
@@ -234,7 +238,11 @@ function wishpot_pub_pro_set_option_defaults()
        'wishpot_pub_pro_widget_ga'                => 'off',
        'wishpot_pub_pro_pp_fblike'                => 'off',
        'wishpot_pub_pro_pp_fbshare'               => 'off',
-       'wishpot_pub_pro_pp_twshare'               => 'off'
+       'wishpot_pub_pro_pp_twshare'               => 'off',
+	   // Default options - 07-21-2011 Fast_Websites
+	   'wishpot_pub_pro_default_cat'               => 'Video Games',
+	   'wishpot_pub_pro_default_keywords'               => 'xbox',
+	   'wishpot_pub_pro_default_place_ID'               => '6',
         );
 
   $wishpot_pub_pro_options = get_option('wishpot_pub_pro_options');
@@ -280,6 +288,44 @@ function wishpot_pub_pro_plugin_create_option_page()
   return;
 }
 
+
+function wishpot_pub_pro_add_sample_page()
+{
+// adds explainatory sample product page for user
+// 07-21-2011 Fast_Websites
+$sample_post = array(
+ 'post_title' => 'Sample Wishpot Product Page',
+ 'post_content' => '[wishpot_ads_product_page]',
+ 'post_status' => 'publish',
+ 'post_author' => 1,
+);
+$samplePostID = wp_insert_post($sample_post);
+$cmntData = array(
+    'comment_post_ID' => $samplePostID,
+    'comment_author' => 'Wishpot Publisher Pro',
+    'comment_author_url' => 'http://wishpot.com/wordpress-plugins/wishpot-publisher-pro',
+    'comment_content' => 'This is a sample Wishpot Product Page you can customize using the Wishpot Publisher Pro plug-in.  You can create a product page like this one just by creating a Wordpress post and adding the appropriate shortcodes to your post.  You can also add Wishpot widgets to your entire website by going to Appearance -> Widgets in your Wordpress dashboard.<br /><br />
+	The shortcodes are:
+	[wishpot_ads_product_page]<br />
+Required.  Declares a page to be a Wishpot Product Page.<br /><br />
+[wishpot_ads_category=Your Category Here]<br />
+Optional.  Defines the category to limit Wishpot results.<br /><br />
+[wishpot_ads_keywords=Your Keywords Here]<br />
+Optional.  Defines the keywords to limit Wishpot results.<br /><br />
+[wishpot_ads_placement_id=6]<br />
+Required.  Defines the Placement ID for Wishpot results.<br /><br />
+[wishpot_ads_source=Your Source Here]<br />
+Optional.  Sends the source name to Wishpot.<br /><br />
+Default listing criteria can be set in the Wishpot options menu.',
+    'comment_parent' => 0,
+    'user_id' => 1,
+    'comment_author_IP' => '127.0.0.1',
+    'comment_agent' => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 (.NET CLR 3.5.30729)',
+    'comment_date' => current_time('mysql'),
+    'comment_approved' => 1,
+);
+wp_insert_comment($cmntData);
+}
 
 
 function wishpot_pub_pro_is_min_wp($version) 
