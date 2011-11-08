@@ -4,8 +4,8 @@ Author Uri: http://publisher.wishpot.com
 Plugin Uri: http://publisher.wishpot.com/publishers/wordpress
 Tags: import, xml data, wishpot, ad manager, ads, products, money
 Requires at least: 2.7
-Tested up to: WP 3.1
-Stable tag: 1.0.5
+Tested up to: WP 3.2
+Stable tag: 1.0.6
 
 
 
