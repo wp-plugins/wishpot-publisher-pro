@@ -16,10 +16,10 @@ Tested with **Wordpress 3.2**
 This free plugin allows you to generate revenues from your blog by integrating products in your pages or sidebar.  You can create any pages by using the built-in short-codes or just use the widgets. 
 The generated widgets differ in size (300x600, 300x250, 160x600, 120x600 etc.).   Products are automatically populated using the Wishpot products database.
 
-For more information about the Wishpot Publisher program you can visit http://publisher.wishpot.com. 
+For more information about the Wishpot Publisher program you can visit http://publisher.wishpot.com.
 
-
-If you have problems or questions, please post it in the **[Support forum](http://wordpress.org/tags/wishpot?forum_id=10#postform)** .  
+To monetize the products displayed by this plugin signup here:  http://productportals.wishpot.com/new_admin/?a_id=1 
+ 
 
 == Support ==
 
@@ -33,13 +33,20 @@ Please post your questions to the Wishpot support forums: http://support.wishpot
 
 == Frequently Asked Questions ==
 
+= Where do I signup to start making money? =
+
+= You must login to wordpress with an administrator user. =
+
+Head over to the Wishpot Publisher signup page http://productportals.wishpot.com/new_admin/?a_id=1 
+
+
 = If I try to activate the plugin, I get a 404 error message =
 
 You must login to wordpress with an administrator user.
 
 = other question =
 
-answer !
+Head over to the official FAQ:  http://publisher.wishpot.com/faq
 
 == Screenshots ==
 
@@ -75,6 +82,9 @@ answer !
 
 = 1.0.5 =
 - hiding filters until we improve some of the overall behavior
+
+= 1.0.6 =
+- minor updates
 
 `<?php code(); // goes in backticks ?>`
 
